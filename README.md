@@ -2,7 +2,7 @@ This repository keeps track of the tasks completed by our team (eYRC#530) during
 
 Our Team - 
 
-Arvind Singh
-B Kartheek Reddy
-Shreyas Sachan
-Vaibhav Jain
+1) Arvind Singh
+2) B Kartheek Reddy
+3) Shreyas Sachan
+4) Vaibhav Jain
