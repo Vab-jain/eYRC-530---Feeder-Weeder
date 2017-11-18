@@ -7,7 +7,7 @@ Our Team -
 1) Arvind Singh
 2) B Kartheek Reddy
 3) Shreyas Sachan
-4) Vaibhav Jain
+4) Vaibhav Jain (Team Leader)
 
 
 About The Theme (Feeder Weeder) - 
