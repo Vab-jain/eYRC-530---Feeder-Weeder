@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1509668484 source:c:\users\abhinav sarkar\desktop\eyrc-2017\task 1 feeder weeder\task 1a\testsuite\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"..\\..\\Task 1A\\MazeSolve\\src.c"
+

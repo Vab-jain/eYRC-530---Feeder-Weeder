@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1510062448 source:c:\users\abhinav sarkar\desktop\eyrc-2017\task 1 feeder weeder\task 1a\mazesolve\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"src.c"
+
+1510063878 c:\users\abhinav sarkar\desktop\eyrc-2017\task 1 feeder weeder\task 1a\mazesolve\src.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
