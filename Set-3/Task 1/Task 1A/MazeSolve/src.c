@@ -109,11 +109,11 @@ struct Graph buildGraph(struct Maze maze)
             }
 
             if(north == true) {
-                adj_matrix.graph_array[node_number][node_number-Y] = 1;
+                adj_matrix.graph_array[node_number-1][node_number] = 1;
             }
 
             if(south == true) {
-                adj_matrix.graph_array[node_number][node_number+Y] = 1;
+                adj_matrix.graph_array[node_number+1][node_number] = 1;
             }
 
         }
