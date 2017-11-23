@@ -5,7 +5,6 @@
 #ifndef PATH_PLANNING
 #define PATH_PLANNING
 //#include "TASK1B.c"
-//#include "test.c"
 
 #define Y 7
 #define X 49   // number of nodes in the flex
@@ -34,9 +33,9 @@ struct Path_Array {
 
 /************************ All Function Prototypes **************************/
 
-struct Graph init_graph();
 struct Graph createGraph();
 struct Graph removeObstacle(struct Graph graph, unsigned char Xn, unsigned char Yn);
+struct Graph addObstacle(struct Graph graph, unsigned char Xn, unsigned char Yn);
 void insertEdge(struct Graph *graph, _Bool edge, int i);
 struct Path_Array init_path();
 int find_min(int arr[], int size, _Bool spt_set[]);
@@ -45,22 +44,6 @@ struct Path_Array findPath(struct Graph graph, int start, int finish);
 
 
 /************************* Defining all the functions **********************/
-
-/** Function Name: init_graph()
- ** Input: none
- ** Output: Returns a Graph structure in which all elements of graph are initialized to 0
- ** Example Call: struct Graph graph = init_graph();
- **/
-struct Graph init_graph() {
-	struct Graph graph;
-	for(int i=0 ; i<X ; i++) {
-		for(int j=0 ; j<X ; j++) {
-			// initialzing the graph with zeroes
-			graph.graph[i][j] = 0;
-		}
-	}
-	return graph;
-}
 
 /** Function Name: insertEdge
  ** Input: graph - it is the pointer to the graph reperesenting the flex
@@ -105,12 +88,27 @@ struct Graph removeObstacle(struct Graph graph, unsigned char Xn, unsigned char 
 	return graph;
 }
 
+/** Function Name: addObstacle 
+ ** Input: graph - it is the structure representing the flex as a graph of 2D-Matrix
+  		   Xn - x coordinate of the obstacle on the flex
+  		   Yn - y coordinate of the obstacle on the flex
+ ** Output: Returns a graph structure after adding the obstacle to the given graph
+ **/
+struct Graph addObstacle(struct Graph graph, unsigned char Xn, unsigned char Yn) {
+	int node = coordinateMapping(Xn,Yn);
+	insertEdge(&graph,1,node);
+	return graph;
+}
+
 /** Function Name: createGraph
  ** Input: None
  ** Output: Returns a graph structure after creating and initializing it with zeroes by calling the init_graph() function
  **/
 struct Graph createGraph() {
-	struct Graph graph = init_graph();
+
+	// initializing the graph with zeroes
+	struct Graph graph = {0}; 
+
 	for(int i=0 ; i<X ; i++) {
 		insertEdge(&graph,1,i);
 	}
@@ -124,7 +122,7 @@ struct Graph createGraph() {
  ** Example Call: struct Path_Array path = init_path();
  **/
 struct Path_Array init_path()
-{
+{	
 	struct Path_Array path;
 	for(int i = 0; i < X; i++)
 		path.path[i] = -1;
