@@ -2,9 +2,13 @@
 
 /* Header file for all functions that contribute to the creation of the graph from flex and finding the shortest path from it */ 
 
-#ifndef PATH_PLANNING
-#define PATH_PLANNING
-//#include "TASK1B.c"
+#ifndef Header_files
+#define Header_files
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <util/delay.h>
+#include "lcd.h"
+#endif
 
 #define Y 7
 #define X 49   // number of nodes in the flex
